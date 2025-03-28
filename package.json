@@ -1,0 +1,26 @@
+{
+  "name": "mini-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client:dev": "npm run dev --workspace=client",
+    "client:build": "npm run build --workspace=client",
+    "server:dev": "npm run start --workspace=server",
+    "client:install": "npm install --workspace=client"
+  },
+  "author": "sehwan",
+  "license": "MIT",
+  "description": "",
+  "workspaces": [
+    "packages/server",
+    "packages/client"
+  ],
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.13.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
