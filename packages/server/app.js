@@ -1,14 +1,15 @@
 import express from 'express'
+import 'dotenv/config'
 const app = express()
-import  mongoose from 'mongoose'
+import connect from './schemas/index.js'
 
-// const port = 3000
 import indexRouter from './routes/index.js'
 import userRouter from './routes/user.route.js'
+connect(process.env.DB_URI)
 
 app.use('/',indexRouter)
 app.use('/users', userRouter); 
-
+// connect('mongodb://admin:0000@localhost:27017')
 
 
 
