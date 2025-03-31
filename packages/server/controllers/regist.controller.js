@@ -14,6 +14,9 @@ const regist = async (req, res) => {
       }
       const user = new User(req.body);
       await user.save()
+      res.status(201).json({
+        message:'신규 사용자가 등록되었습니다.'
+      })
       // await newUser.save();
       // res.status(200).json({
       //   message: 'new user is created!'
