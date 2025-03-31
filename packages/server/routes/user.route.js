@@ -1,13 +1,13 @@
 import express from 'express'
 const router = express.Router()
+import regist from '../controllers/regist.controller.js'
 
 
   router.get('/', (req, res) => {
     res.send('users list is returned!')
   })
-  router.post('/', (req, res) => {
-    res.send('new user is created!')
-  })
+  router.post('/', regist)
+
   router.put('/:id', (req, res) => {
     res.send('some user is updated')
   })
