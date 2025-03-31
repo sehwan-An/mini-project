@@ -6,8 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "client:dev": "npm run dev --workspace=client",
     "client:build": "npm run build --workspace=client",
-    "server:dev": "npm run start --workspace=server",
-    "client:install": "npm install --workspace=client"
+    "server:dev": "npm run start --workspace=server"
   },
   "author": "sehwan",
   "license": "MIT",
@@ -17,6 +16,7 @@
     "packages/client"
   ],
   "dependencies": {
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "mongoose": "^8.13.0"
   },
