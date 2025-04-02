@@ -8,6 +8,7 @@ const userSchema = mongoose.Schema({
     pwd: {
         type:String,
         requierd: true,
+        length:12
 
     },
     email: {

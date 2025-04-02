@@ -6,7 +6,7 @@ import regist from '../controllers/regist.controller.js'
   router.get('/', (req, res) => {
     res.send('users list is returned!')
   })
-  router.post('/', regist)
+  router.post('/regist', regist)
 
   router.put('/:id', (req, res) => {
     res.send('some user is updated')

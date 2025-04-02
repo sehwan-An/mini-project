@@ -1,4 +1,4 @@
-import {Container, Carousel} from 'react-bootstrap/Carousel';
+import {Container, Carousel} from 'react-bootstrap';
 import HomeImage from '../assets/home-section.png'
 
 function HomeCarousel() {

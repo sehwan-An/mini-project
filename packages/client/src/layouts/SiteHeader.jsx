@@ -3,11 +3,13 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.min.css'
 import {Container, Row, Col, Button} from 'react-bootstrap'
 import siteLogo from '../assets/site-logo.png'
-import { NavLink } from 'react-router'
+import { NavLink, Navigate } from 'react-router'
 
 
 const SiteHeader = () => {
   const handleClick = () => {
+    location.href='/signup'
+    
    alert('회원가입으로 이동합니다') 
   }
     return (
@@ -26,7 +28,7 @@ const SiteHeader = () => {
         </ul>
 
     </nav>
-    <Button onClick={handleClick} >Register Now <i class="bi bi-arrow-right"></i></Button>
+    <Button onClick={handleClick}>Register Now <i class="bi bi-arrow-right"></i></Button>
     </Col>
 </Row>
         </Container>
