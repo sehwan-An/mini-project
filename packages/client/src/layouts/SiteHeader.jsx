@@ -25,10 +25,11 @@ const SiteHeader = () => {
             <li><NavLink to='/'>Home</NavLink></li>
             <li><NavLink to='/'>about</NavLink></li>
             <li><NavLink to='/'>community</NavLink></li>
+            <li><NavLink to='SignIn'>로그인</NavLink></li>
         </ul>
 
     </nav>
-    <Button onClick={handleClick}>Register Now <i class="bi bi-arrow-right"></i></Button>
+    <Button onClick={handleClick}>Register Now <i className="bi bi-arrow-right"></i></Button>
     </Col>
 </Row>
         </Container>

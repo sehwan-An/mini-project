@@ -13,14 +13,14 @@ function HomeCarousel() {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-        <img src={HomeImage} alt='home'/>
+        <img src={HomeImage} alt='home'className='img-fluid'/>
           <Carousel.Caption>
             <h3>Second slide label</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-        <img src={HomeImage} alt='home'/>
+        <img src={HomeImage} alt='home'className='img-fluid'/>
           <Carousel.Caption>
             <h3>Third slide label</h3>
             <p>
