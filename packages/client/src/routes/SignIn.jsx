@@ -32,7 +32,8 @@ setFormData({
 axios.post('http://localhost:3000/users/login', formData, {
   headers: {
     'Content-Type': 'application/json'
-  }
+  },
+  withCredentials: true
 }).then((response)=>{
   if(response.statusText === 'OK' || response.status === 200)
     {
