@@ -6,7 +6,7 @@ const userSchema = mongoose.Schema({
     type: String,
     rquierd: true,
   },
-  pwd: {
+  password: {
     type: String,
     requierd: true,
     length: 12,
@@ -24,7 +24,7 @@ const userSchema = mongoose.Schema({
 userSchema.pre('save', async function (next) {
   try {
     const salt = await bcrypt.genSalt(10);
-    this.pwd = await bcrypt.hash(this.pwd, salt);
+    this.password = await bcrypt.hash(this.password, salt);
   } catch (err) {
     next(err);
   }
