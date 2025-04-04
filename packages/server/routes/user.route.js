@@ -1,6 +1,5 @@
 import express from 'express'
 const router = express.Router()
-import regist from '../controllers/user.controller.js'
 import userControl from '../controllers/user.controller.js'
 
   router.get('/', (req, res) => {
