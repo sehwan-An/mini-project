@@ -6,7 +6,7 @@ import siteLogo from '../assets/site-logo.png'
 import { NavLink, Navigate } from 'react-router'
 
 
-const SiteHeader = () => {
+const SiteHeader = ({userInfo, handleLogOut}) => {
   const handleClick = () => {
     location.href='/signup'
     
@@ -14,6 +14,22 @@ const SiteHeader = () => {
   }
     return (
     <header className='py-3'>
+      <Container>
+        <div className='w-100 text-end border-bottom py-2'>{ userInfo ?
+          (<>
+          <span>{userInfo}님 로그인중</span> {" | "}
+          <NavLink to='/modify'>정보수정</NavLink>{" "}
+          <NavLink onClick={handleLogOut}>로그아웃</NavLink>
+          
+          </>
+        ) : (
+          <>
+          <NavLink to='/signin'>로그인</NavLink> {" "}
+          <Button onClick={handleClick}>Register Now<i className=""/></Button>
+          </>
+        )}
+      </div>
+      </Container>
         <Container> 
 <Row className='align-items-center justify-content-between'>
     <Col className='logo'>
@@ -24,12 +40,10 @@ const SiteHeader = () => {
         <ul className='d-flex gap-3'>
             <li><NavLink to='/'>Home</NavLink></li>
             <li><NavLink to='/'>about</NavLink></li>
-            <li><NavLink to='/'>community</NavLink></li>
-            <li><NavLink to='SignIn'>로그인</NavLink></li>
+            <li><NavLink to='/'>board</NavLink></li>
         </ul>
 
     </nav>
-    <Button onClick={handleClick}>Register Now <i className="bi bi-arrow-right"></i></Button>
     </Col>
 </Row>
         </Container>
