@@ -7,6 +7,7 @@ import cors from 'cors'
 import connect from './schemas/index.js'
 import indexRouter from './routes/index.js'
 import userRouter from './routes/user.route.js'
+import postRouter from './routes/post.route.js'
 
 connect()
 app.use(logger('dev'))
@@ -19,7 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use('/',indexRouter)
 app.use('/users', userRouter); 
-// app.use('/posts', postRouter)
+app.use('/api', postRouter)
 // connect('mongodb://admin:0000@localhost:27017')
 
 
