@@ -4,18 +4,20 @@ import Home from './routes/Home'
 import About from './routes/About.jsx'
 import SignUp from './routes/SignUp'
 import SignIn from './routes/SignIn'
-import Board from './routes/Board'
+import Posts from './routes/Posts'
+import AddPost from './routes/AddPost.jsx'
 
 const App = () => {
   return (
     < >
     <Routes>
       <Route path='/' element={<Home />}>
-      <Route path='/About' element={<About />}/>
+      <Route path='/about' element={<About />}/>
       <Route path='/signup' element={<SignUp />}/>
-      <Route path='/SignIn' element={<SignIn />}/>
-      <Route path='/Board' element={<Board />}/>
+      <Route path='/signIn' element={<SignIn />}/>
+      <Route path='/posts' element={<Posts />}/>
       </Route>
+      <Route path='/addPost' element={<AddPost/>}/>
       </Routes>
     </>
   )
