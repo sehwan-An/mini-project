@@ -14,6 +14,7 @@ const Home = () => {
     try{
     if(token){
       const decodedToken = jwtDecode(token)
+      console.log("현재토큰값:", decodedToken)
       setUserInfo(decodedToken)
     }
   } catch(err){

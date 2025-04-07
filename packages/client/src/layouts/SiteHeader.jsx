@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.min.css'
 import {Container, Row, Col, Button} from 'react-bootstrap'
 import siteLogo from '../assets/site-logo.png'
-import { NavLink, Navigate } from 'react-router'
+import { NavLink } from 'react-router'
 
 
 const SiteHeader = ({userInfo, handleLogOut}) => {
@@ -37,10 +37,10 @@ const SiteHeader = ({userInfo, handleLogOut}) => {
     </Col>
     <Col className='d-flex align-items-center gap-3 '>
     <nav>
-        <ul className='d-flex gap-3'>
+        <ul className='d-flex align-items-center gap-3'>
             <li><NavLink to='/'>Home</NavLink></li>
             <li><NavLink to='/'>about</NavLink></li>
-            <li><NavLink to='/'>board</NavLink></li>
+            <li><NavLink to='/posts'>posts</NavLink></li>
         </ul>
 
     </nav>
