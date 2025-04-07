@@ -5,6 +5,7 @@ import userControl from '../controllers/user.controller.js'
   router.get('/', (req, res) => {
     res.send('users list is returned!')
   })
+  router.get('/:id',userControl.getUserNameById)
   router.post('/regist', userControl.regist)
 router.post('/login',userControl.login)
   router.put('/:id', (req, res) => {
