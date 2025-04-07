@@ -1,5 +1,7 @@
 import User from '../models/User.js';
 import bcrypt from 'bcrypt'
+import 'dotenv/config'
+import jwt from 'jsonwebtoken'
 
 const regist = async (req, res) => {
   const { username, password, email, phone, sns } = req.body;
@@ -48,7 +50,9 @@ const login = async (req, res) => {
       id: user._id,
     };
 
-    res.cookie('nexcent', userInfo, { httpOnly: false, secure: false, maxAge: 60 * 60 * 1000, path: '/' });
+    const token = jwt.sign(userInfo,process.env.JWT_SECRET)
+    console.log(token);
+    res.cookie('nexcent', token, { httpOnly: false, secure: false, maxAge: 60 * 60 * 1000, path: '/' });
     console.log(res.getHeaders()['set-cookie']);
     res.status(200).json({
       message: '로그인 성공!',
