@@ -74,3 +74,6 @@ ul {
 .logo {
   flex:0 0 108px !important;
 }
+th, td {
+  text-align:center !important
+}
