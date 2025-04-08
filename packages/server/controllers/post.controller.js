@@ -31,7 +31,8 @@ try {
 };
 export const readPosts = async (req, res) => {
   try {
-    const posts = await Post.find()
+
+    const posts = await Post.find().populate('author','username').sort({createdAt: -1})
     console.log(posts)
     // if (posts.length) {
     //   res.status(500).json({
@@ -48,9 +49,47 @@ export const readPosts = async (req, res) => {
     });
   }
 };
+
+export const readPost = async (req, res) => {
+  try {
+
+    const post = await Post.findOne({uuid: req.params.id}).populate('author','username')
+    if(!post){
+      return res.status(401).json({
+        message:'유효한 id 값이 아닙니다'
+      })
+    }
+
+    res.status(201).json(post);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({
+      status: 'fail',
+      message: '데이터베이스 저장할수 없습니다.',
+    });
+  }
+};
 // export const updatePosts = () => {
 
 // }
-// export const deletePosts = () => {
-
-// }
+ export const removePost = async (req,res) => {
+  try{
+const post = await Post.findByIdAndDelete(req.params.id);
+if(!post){
+  return res.status(401).json({
+    message:'유효한 id 값이 아닙니다'
+  })
+}
+res.status(201).json({
+  status:'succes',
+  message:'글 삭제 성공'
+})
+}
+catch(err){
+  console.error(err.message);
+  res.status(500).json({
+    status:'fail',
+    message:'데이터가 없거나 로드하는중 에러가 발생했습니다.'
+  })
+}
+ }
